@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>瀑布流加载</title>
+    <link rel="stylesheet" href="src/css.css"/>
+    <script type="text/javascript" src="src/jquery-1.12.0.js"></script>
+    <script type="text/javascript" src="src/masonry.js"></script>
+    <script type="text/javascript" src="src/jquery.infinitescroll.min.js"></script>
+    <script type="text/javascript" src="src/laytpl.min.js"></script>
+    <script type="text/javascript" src="src/show.js"></script>
+
+</head>
+<body>
+    <h1 class="title">瀑布流加载</h1>
+    <div class="select-warp">
+        <div class="sort-by-wrap">
+            <p class="sort-by-item fl">
+                排序:
+                <select name="order_by" id="js_sortBy">
+                    <option value="1">最新</option>
+                    <option value="2">最热</option>
+                </select>
+            </p>
+        </div>
+    </div>
+
+    <div class="show-list">
+        <div class="grid clearfix" id="grid">
+            <div class="grid-item">
+                <img src="img/a1.jpg" alt=""/>
+            </div>
+            <div class="grid-item">
+                <img src="img/a2.jpg" alt=""/>
+            </div>
+            <div class="grid-item">
+                <img src="img/a3.jpg" alt=""/>
+            </div>
+            <div class="grid-item">
+                <img src="img/a4.jpg" alt=""/>
+            </div>
+            <div class="grid-item">
+                <img src="img/a1.jpg" alt=""/>
+            </div>
+            <div class="grid-item">
+                <img src="img/a2.jpg" alt=""/>
+            </div>
+            <div class="grid-item">
+                <img src="img/a3.jpg" alt=""/>
+            </div>
+            <div class="grid-item">
+                <img src="img/a4.jpg" alt=""/>
+            </div>
+            <div class="grid-item">
+                <img src="img/a1.jpg" alt=""/>
+            </div>
+            <div class="grid-item">
+                <img src="img/a2.jpg" alt=""/>
+            </div>
+            <div class="grid-item">
+                <img src="img/a3.jpg" alt=""/>
+            </div>
+            <div class="grid-item">
+                <img src="img/a4.jpg" alt=""/>
+            </div>
+            <div class="grid-item">
+                <img src="img/a1.jpg" alt=""/>
+            </div>
+            <div class="grid-item">
+                <img src="img/a4.jpg" alt=""/>
+            </div>
+            <div class="grid-item">
+                <img src="img/a1.jpg" alt=""/>
+            </div>
+        </div>
+    </div>
+    <div id="page-nav"></div>
+    <div id="js_noMore" class="no-more w1200"><h3><span class="line"></span><strong>no more</strong></h3></div>
+
+
+    <script id="gridTmp" type="text/html">
+        {{#
+        if(d.message.length > 0){
+        for (var i=0;i < d.message.length;i++){
+        var currentData = d.message[i];
+        }}
+
+        <div class="grid-item">
+            <img src="{{currentData.show_img}}" alt=""/>
+        </div>
+        {{# } }}
+        {{# } }}
+    </script>
+
+    <script>
+
+    </script>
+</body>
+</html>
